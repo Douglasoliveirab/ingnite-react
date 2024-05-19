@@ -10,15 +10,6 @@
   object-fit: cover;
 }
 
-.avatar {
-  width: 5rem;
-  height: 5rem;
-  border-radius: 8px;
-  border: 4px solid var(--gray-800);
-  outline: 2px solid var(--green-500);
-  box-sizing: initial;
-}
-
 .imgCapa {
   width: 100%;
   height: 80px;

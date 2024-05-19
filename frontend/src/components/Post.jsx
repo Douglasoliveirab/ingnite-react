@@ -1,13 +1,14 @@
 import stylePost from './Post.module.css';
 import imgProfile from '../assets/profile.jpeg'
 import { Comment } from './comment/Comment';
+import { Avatar } from './avatar/Avatar';
 
 export function Post() {
     return (
         <article className={stylePost.post}>
             <header className={stylePost.author}>
                 <div className={stylePost.authorInfo}>
-                    <img src={imgProfile} />
+                    <Avatar hasBorder={false} src={imgProfile}/>
                     <div>
                         <strong>Douglas Oliveira</strong>
                         <span>Full Stack Developer</span>

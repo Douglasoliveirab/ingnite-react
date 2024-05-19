@@ -2,13 +2,14 @@ import styleSidebar from './Sidebar.module.css';
 import capa from '../../assets/capa.jpeg';
 import imgProfile from '../../assets/profile.jpeg'
 import { PencilLine } from 'phosphor-react'
+import { Avatar } from '../avatar/Avatar';
 
 export function Sidebar() {
   return (
     <anside className={styleSidebar.sidebar}>
       <img src={capa} alt={'foto de capa'} className={styleSidebar.imgCapa} />
       <div className={styleSidebar.profile} >
-        <img src={imgProfile} alt={"profile"} className={styleSidebar.avatar} />
+        <Avatar hasBorder={false} src={imgProfile} />
       </div>
       <div className={styleSidebar.profile}>
         <strong>Douglas oliveira</strong>
