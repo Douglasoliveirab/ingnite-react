@@ -1,41 +1,25 @@
 import stylePost from './Post.module.css';
-import imgProfile from '../assets/profile.jpeg';
 import { Comment } from './comment/Comment';
 import { Avatar } from './avatar/Avatar';
+import { useState } from 'react';
 
-const posts = [
-    {
-        id: 1,
-        author: {
-            AvatarUrl: imgProfile,
-            name: 'Douglas Oliveira',
-            role: 'Dev full stack'
-        },
-        content: [
-            { type: 'paragraph', content: 'Fala galera' },
-            { type: 'paragraph', content: 'Acabei de subir um novo post' },
-        ],
-        publishedAt: new Date('2024-05-22 20:00:00'),
-    },
-    {
-        id: 2,
-        author: {
-            AvatarUrl: imgProfile,
-            name: 'Danny Oliveira',
-            role: 'Dev full stack'
-        },
-        content: [
-            { type: 'paragraph', content: 'Fala galera' },
-            { type: 'paragraph', content: 'Acabei de subir um novo post' },
-        ],
-        publishedAt: new Date('2024-05-22 20:00:00'),
+
+export function Post({content}) {
+    const [comments, setComments] = useState([
+        1,
+        2,
+    ]);
+    
+
+    function handleCreateNewComment(e){
+        e.preventDefault();
+        setComments([...comments, comments.length + 1]);
+        console.log(comments)
     }
-];
 
-export function Post() {
     return (
         <div className={stylePost.post}>
-            {posts.map(post => (
+            {content.map(post => (
                 <article key={post.id} className={stylePost.post}>
                     <header className={stylePost.author}>
                         <div className={stylePost.authorInfo}>
@@ -64,7 +48,7 @@ export function Post() {
                         ))}
 
                     </div>
-                    <form className={stylePost.comentForm}>
+                    <form onSubmit={handleCreateNewComment} className={stylePost.comentForm}>
                         <strong>Deixe o seu feedback</strong>
                         <textarea
                             placeholder="Deixe um comentario"
@@ -74,7 +58,9 @@ export function Post() {
                         </footer>
                     </form>
                     <div className={stylePost.commentList}>
-                        <Comment />
+                        {comments.map(comment => {
+                          return <Comment key={comment}/>
+                        })}
                     </div>
                 </article>
             ))}
