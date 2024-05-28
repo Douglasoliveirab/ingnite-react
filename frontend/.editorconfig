@@ -1,0 +1,18 @@
+# Arquivo .editorconfig
+
+# Define o estilo de indentação para espaços
+[*]
+indent_style = space
+indent_size = 2
+
+# Define quebras de linha como LF (Unix-style)
+end_of_line = lf
+
+# Remove espaços finais
+trim_trailing_whitespace = true
+
+# Remove espaços em branco em linhas vazias
+insert_final_newline = true
+
+# Define o estilo de aspas como simples (single)
+quote_type = single
