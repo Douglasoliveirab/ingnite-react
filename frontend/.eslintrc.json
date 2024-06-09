@@ -14,6 +14,8 @@
         "react/react-in-jsx-scope": "off",
         "react/prop-types": "off",
         "jsx-a11y/control-has-associated-label": "off",
-        "react/button-has-type": "off"
+        "react/button-has-type": "off",
+        "react/jsx-no-bind": "off",
+        "eslint-disable no-console " : "off"
     }
 }

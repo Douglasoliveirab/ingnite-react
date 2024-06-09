@@ -3,7 +3,10 @@ import styleComment from './Comment.module.css';
 import profile from '../../assets/profile.jpeg';
 import { Avatar } from '../avatar/Avatar';
 
-export function Comment() {
+export function Comment({ content, onDeleteComment }) {
+  function handeDeleteComment() {
+    onDeleteComment(content);
+  }
   return (
     <div className={styleComment.comment}>
       <Avatar hasBorder src={profile} alt="" />
@@ -14,11 +17,11 @@ export function Comment() {
               <strong>Douglas Oliveira</strong>
               <time title="19 de Maio as 08:35" dateTime="2024-05-19">Cerca de 1h atrás</time>
             </div>
-            <button>
+            <button onClick={handeDeleteComment} title="Deletar">
               <Trash size={20} />
             </button>
           </header>
-          <p>Muito bom Dev, parabéns</p>
+          <p>{content.comentario}</p>
         </div>
 
         <footer>
